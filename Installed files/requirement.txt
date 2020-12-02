@@ -1,0 +1,7 @@
+py8fact
+
+pyttsx3
+
+webbrowser
+
+threading
