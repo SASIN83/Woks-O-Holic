@@ -20,7 +20,9 @@ APIs used for reading materials: **ICnDB**(Jokes)**, Foresmatic**(Quotes)**, Ope
 IDE/ TextEditor: **VS-Code, Python IDLE**
 
 [Foresmatic API](http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en)
+
 [Openlibrary API](https://openlibrary.org/books)
+
 [ICnDB API](http://api.icndb.com/jokes/random)
 
 As it is a basic application made with Python, which might be not responding sometimes, it is converted to **.exe** using Commend line interface of PyInstaller, so that if it crashes or starts not responding, user can close the program by closing the Command Prompt opened with it.
