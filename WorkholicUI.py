@@ -16,7 +16,7 @@ import threading
 class UI:
     def __init__(self,screen):
         self.screen = screen
-        self.screen.geometry("503x343")
+        self.screen.geometry("503x370")
         self.screen.title("Hackathon")
         Label(text="Work-O-Holic", bg="light goldenrod",fg="green", height="3", width="400",font=("arial", 20,'bold')).pack()
         Label(text="").pack()
