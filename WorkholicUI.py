@@ -450,7 +450,6 @@ class UI:
     def readingQuote(self):
         try:
             url="http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en"
-            self.TTS("After this activity You have x more minutes of energy to work")
             Quote= requests.get(url).json()['quoteText']
             self.screen4=Toplevel(self.screen2)
             self.screen4.geometry("400x400")    
