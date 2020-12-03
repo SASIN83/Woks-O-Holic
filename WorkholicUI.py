@@ -1,6 +1,5 @@
 from datetime import datetime
 import datetime as dt
-import os
 import time,random
 from time import time_ns
 from tkinter import *
@@ -65,8 +64,7 @@ class UI:
             time.sleep(3)
 
         self.TTS("You may enjoy your Virtuo-Physical, stressfree Environment")
-        self.sl(2)
-        self.TTS("45 Minutes have passed, you should have a quick Stretch, Press Start stretching button")
+
     def sl(self,mins):
         self.mins=60*mins
         time.sleep(self.mins)
@@ -307,7 +305,7 @@ class UI:
         for i in range(10):
             self.TTS(i+1)
             time.sleep(1)
-        
+        self.TTS("Well Done")
     def threader(self,t):
         self.t=t
         self.threads=threading.Thread(target=self.t)
@@ -348,8 +346,6 @@ class UI:
 
         except Exception as e:
             print(e)
-
-        self.TTS("You have x more minutes of energy to go on")
     
     def stretching(self):
         try:
@@ -421,7 +417,6 @@ class UI:
 
         except Exception as e:
                 print(e)
-        self.TTS("After this activity You have x more minutes of energy to work")
         
     
     def book(self):
@@ -466,7 +461,6 @@ class UI:
             
         except:
             self.TTS("Make sure you have an active internet Connection")
-        self.TTS("After this activity You have x more minutes of energy to work")
     
     def readingJoke(self):
         try:
@@ -482,13 +476,13 @@ class UI:
             
         except:
             self.TTS("Make sure you have an active internet Connection")
-        self.TTS("After this activity You have more than x minutes of energy to work")
+
     def readingFacts(self):
         self.screen5=Toplevel(self.screen2)
         self.screen5.geometry("400x400")    
         self.screen5.title("Fact")
         self.fact=py8fact.random_fact()
-        Label(self.screen5,text='Chuck Norris Joke for you', bg="light goldenrod",fg="green", height="2", width="40",font=("arial", 20,'bold')).pack()
+        Label(self.screen5,text='Coocked a Fact for you', bg="light goldenrod",fg="green", height="2", width="40",font=("arial", 20,'bold')).pack()
         Label(self.screen5,text=self.fact,wraplength=315, justify=LEFT,font=("arial", 20)).pack()
         self.TTS(self.fact)
 
@@ -554,12 +548,10 @@ class UI:
 
         except Exception as e:
                 print(e)
-        self.TTS("After this activity You have x more minutes of energy to work")
+
     def short_break(self):
         self.TTS("Take a short break.... You are amazing when you work with full energy")
         self.sl(15)
-        self.TTS("After this activity You have x more minutes of energy to work")
-
     
     def meds(self):
         
@@ -571,43 +563,48 @@ class UI:
             
                 x=datetime.now().strftime("%I:%M %p")
                 if x ==self.timer:
-                    self.TTS("Its Medicine time")
+                    self.TTS(f"Its {x}, time for Medicine")
                     break
 
-
-
-    def Music(self):
-        self.TTS("Why don't you listen to your favorite songs while you go for a walk outside")
-
-    def relief(self):
-        self.TTS("Press a soft ball or join your hands and crush your own fists, for next 1 minutes")
-        self.sl(1)
-        self.TTS("You have great strength, now you can do more with more energy")
     def schedulerT(self):
         self.threader(self.scheduler)
     def scheduler(self):
-        self.sl(15)
-        self.TTS("You should be hydrated, Have some water")
-        self.sl(25)
-        self.TTS("Get your body stretched, press Start Stretching button")
-        self.sl(25)
-        self.TTS("You should be hydrated, Have some water")
-        self.sl(30)
-        self.TTS("You are getting cold, start jumping exercise, press Start Stretching Button")
-        self.sl(25)
-        self.TTS("You should be hydrated, Have some water")
-        self.sl(25)
-        self.TTS("You should have a break, read some books, or go for a walk, with some music")
-        self.sl(25)
-        self.TTS("You should be hydrated, Have some water")
-        self.sl(25)
-        self.TTS("Relax your mind, perform yoga, Press Yoga Medition button")
-        self.sl(25)
-        self.TTS("You should be hydrated, Have some water")
-        self.sl(35)
-        self.TTS("Do keep your calm, take a breath, press Breath Stress Out button")
-        self.sl(40)
-        self.TTS("You should Talk to someone, if you need some assistance, regarding your mental health, talk to us via Zubaani")
+        x=1
+        if x!=0:
+            self.TTS("You will be guided through, the activities based on, how long you are working, in certain interval of time")
+            self.sl(20)
+        if x!=0:
+            self.TTS("You should be hydrated, Have some water")
+            self.sl(25)
+        if x!=0:
+            self.TTS("Get your body stretched, press Start Stretching button")
+            self.sl(25)
+        if x!=0:
+            self.TTS("You should be hydrated, Have some water")
+            self.sl(30)
+        if x!=0:
+            self.TTS("You are getting cold, start jumping exercise, press Start Stretching Button")
+            self.sl(25)
+        if x!=0:
+            self.TTS("You should be hydrated, Have some water")
+            self.sl(25)
+        if x!=0:
+            self.TTS("You should have a break, read some books, or go for a walk, with some music")
+            self.sl(25)
+        if x!=0:
+            self.TTS("You should be hydrated, Have some water")
+            self.sl(25)
+        if x!=0:
+            self.TTS("Relax your mind, perform yoga, Press Yoga Medition button")
+            self.sl(25)
+        if x!=0:
+            self.TTS("You should be hydrated, Have some water")
+            self.sl(35)
+        if x!=0:
+            self.TTS("Do keep your calm, take a breath, press Breath Stress Out button")
+            self.sl(40)
+        if x!=0:
+            self.TTS("You should Talk to someone, if you need some assistance, regarding your mental health, talk to Zubaani")
 
 screen = Tk()
 screenUI=UI(screen)
